@@ -40,11 +40,11 @@ function addRequest(title, description){
 	var message = request.requestDiv.append("div")
 		.attr("class", "message");
 
-	message.append("div")
+	message.append("textarea")
 		.attr("class", "title")
 		.text(request.title);
 
-	message.append("div")
+	message.append("textarea")
 		.attr("class", "details")
 		.text(request.description);
 

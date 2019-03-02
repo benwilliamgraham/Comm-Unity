@@ -93,14 +93,30 @@ body{
     position: absolute;
     padding: 1em;
     bottom: 0;
+    color: #ddd;
     background: #434d4e;
     width: 100%;
     box-shadow: 2px -3px #0006;
 }
 
-#input #message{
-    width: 80%;
+#text{
+    width: 85%;
+    display: inline-block;
+}
+
+#title{
+    width: 100%;
     background: #ddd;
     resize: none;
- 
+    height: 1.2em;
+}
+
+#description{
+    width: 100%;
+    background: #ddd;
+    resize: none;
+}
+
+#send{
+
 }
