@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
     <script src="//d3js.org/d3.v5.js" charset="utf-8"></script>
     <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
 </head>
+
 <body>
+    <div id="container">
+        <div id="login-button"></div>
+        <div id="profile" class="hidden">
+        </div>
+    </div>
     <div id="requests"></div>
     <div id="input">
         <textarea id="message"></textarea>
@@ -15,4 +23,35 @@
         <script src="index.js"></script>
     </div>
 </body>
+<script>
+    window.snapKitInit = () => {
+        snap.loginkit.mountButton("login-button", {
+            clientId: "8ed85722-9200-4299-bae1-2d9ece266345",
+            redirectURI: "http://localhost:8000",
+            scopeList: [
+                "user.display_name",
+                "user.bitmoji.avatar",
+            ],
+            handleResponseCallback: () => {
+                snap.loginkit.fetchUserInfo().then(data => {
+                    document.getElementById("login-button").classList.add("hidden")
+                    document.getElementById("profile").classList.remove("hidden")
+
+                    document.getElementById("picture").src = data["data"]["me"]["bitmoji"]["avatar"]
+                    document.getElementById("welcome").innerHTML = "Welcome, " + data["data"]["me"]["displayName"] + "!"
+                })
+            },
+        })
+    }
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, sjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://sdk.snapkit.com/js/v1/login.js";
+        sjs.parentNode.insertBefore(js, sjs);
+    }(document, "script", "loginkit-sdk"));
+</script>
+
 </html>

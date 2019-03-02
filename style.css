@@ -98,3 +98,7 @@ body{
 #input #message{
     width: 80%;
 }
+#login-button button {
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+  }
