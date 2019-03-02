@@ -10,7 +10,7 @@ var pusher = new Pusher({ appId: "726568", key: "d8769f3993afaff26999", secret: 
 
 app.post('/message', function(req, res) {
 	var message = req.body.message;
-	pusher.trigger( 'public-chat', 'message-added', { message });
+	pusher.trigger( 'communications', 'update', { message });
 	res.sendStatus(200);
 });
 
@@ -19,7 +19,9 @@ app.get('/',function(req,res){
 });
 
 app.use(express.static(__dirname));
+
 var port = process.env.PORT || 8000;
+
 app.listen(port, function () {
 	console.log("Active on port: " + port)
 });
