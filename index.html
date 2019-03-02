@@ -42,7 +42,7 @@
                 handleResponseCallback: () => {
                     snap.loginkit.fetchUserInfo().then(data => {
                         document.getElementById("login-button").classList.add("hidden")
-                        document.getElementById("profile").classList.remove("hidden")
+                        //document.getElementById("profile").classList.remove("hidden")
 
                         document.getElementById("picture").src = data["data"]["me"]["bitmoji"]["avatar"]
                         document.getElementById("welcome").innerHTML = "Welcome, " + data["data"]["me"]["displayName"] + "!"
