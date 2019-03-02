@@ -17,30 +17,37 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #f3e99a;
+    background-color: #cfd9db;
 }
 
 #requests{
-    height: 75%;
-    background: #d8ce82;
+
 }
 
 .request{
-    border: 2px solid #918b61;
-    border-radius: 5px;
+    background: #eee;
+    border-radius: 10px;
     padding: 1em;
+    box-shadow: 2px 3px #0003;
+    transition: 0.3s;
+}
+
+.request:hover{
+    box-shadow: 1px 1px #0003;
 }
 
 .completed{
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
-    background-color: #fcfcfc;
+    background-color: #dfdfdf;
+    box-shadow: 2px 3px #0003;
     border: none;
+    transition: 0.3s;
 }
 
 .completed:hover{
-    background-color: #dedede;
+    box-shadow: none;
 }
 
 .message{
@@ -50,10 +57,11 @@ body{
 
 #input{
     position: absolute;
+    padding: 1em;
     bottom: 0;
-    background: #d8ce82;
+    background: #434d4e;
     width: 100%;
-    border-top: 2px solid #918b61;
+    box-shadow: 2px -3px #0003;
 }
 
 #input #message{
