@@ -21,11 +21,6 @@ body{
     background-color: #cfd9db;
 }
 
-#closed{
-    margin: 0px;
-    padding: 0px;
-}
-
 .request{
     background: #eee;
     border-radius: 1em;
@@ -63,7 +58,7 @@ body{
 
 .completed:hover{
     box-shadow: none;
-    background: #ccc;
+    background: #aaa;
 }
 
 .userInfo{
@@ -192,14 +187,14 @@ body{
 }
 
 #post:hover{
-    background: #ccc;
+    background: #aaa;
     box-shadow: 1px 1px #0006;
 }
 
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
     background-color: #f1f1f1;
+    box-shadow: 2px 3px #0006;
   }
   
 
@@ -217,13 +212,13 @@ body{
     background-color: #ddd;
 }
 
-.tab button.active {
-    background-color: #ccc;
+.tab.active button{
+    background-color: #aaa;
 }
 
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+#closed{
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #aaa;
 }
