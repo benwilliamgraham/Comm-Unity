@@ -5,9 +5,10 @@ var requests = [];
 
 var requestsDiv = d3.select("#requests").text("");
 
-function addRequest(request){
-	request = {
-		value: request
+function addRequest(title, description){
+	var request = {
+		title: title,
+		description: description
 	};
 
 	request.requestDiv = requestsDiv.append("div")
@@ -20,7 +21,7 @@ function addRequest(request){
 		.attr("type", "button")
 		.attr("value", "✔️")
 		.on("click", function(){
-			const message = "del##" + request.value;
+			const message = "del##" + request.title + "##" + request.description;
 
 			$.post( "http://localhost:8000/message", { message } );
 		});
@@ -41,18 +42,18 @@ function addRequest(request){
 
 	message.append("div")
 		.attr("class", "title")
-		.text("Title");
+		.text(request.title);
 
 	message.append("div")
 		.attr("class", "details")
-		.text(request.value);
+		.text(request.description);
 
 	requests.push(request);
 }
 
-function removeRequest(request){
+function removeRequest(title, description){
 	for(var r = 0; r < requests.length; r++){
-		if(requests[r].value == request){
+		if(requests[r].title == title && requests[r].description == description){
 			requests[r].requestDiv.remove();
 			requests.splice(r, 1);
 			return;
@@ -75,10 +76,11 @@ $(document).ready(function(){
 
 	//add send button
 	$('#send').click(function(){
-		const message = "add##" + $("#message").val();
+		const message = "add##" + $("#title").val() + "##" + $("#description").val();
 
 		//clear message box
-		$("#message").val("");
+		$("#title").val("");
+		$("#description").val("");
 
 		//send message
 		$.post( "http://localhost:8000/message", { message } );
@@ -88,10 +90,10 @@ $(document).ready(function(){
 	function onUpdate(data) {
 		var update = data.message.split("##");
 		if (update[0] == "add"){
-			addRequest(update[1]);
+			addRequest(update[1], update[2]);
 		}
 		else{
-			removeRequest(update[1]);
+			removeRequest(update[1], update[2]);
 		}
 	}
 });

@@ -28,14 +28,14 @@ body{
 .request{
     background: #eee;
     border-radius: 1em;
-    box-shadow: 2px 3px #0003;
+    box-shadow: 2px 3px #0006;
     margin: 1em;
     transition: 0.3s;
     height: 4em;
 }
 
 .check{
-    width: 3.5em;
+    width: 4em;
     height: 4em;
     position: absolute;
     background: #434d4e;
@@ -50,17 +50,22 @@ body{
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
-    background-color: #dfdfdf;
-    box-shadow: 2px 3px #0003;
+    background: #ddd;
+    box-shadow: 2px 3px #0006;
     border: none;
     transition: 0.3s;
+}
+
+.completed:hover{
+    box-shadow: none;
+    background: #ccc;
 }
 
 .userInfo{
     position: absolute;
     width: 4em;
     height: 4em;
-    left: 3.5em;
+    left: 4em;
     padding: 0em;
     background: #434d4e;
     text-align: center;
@@ -71,21 +76,17 @@ body{
 }
 
 .request:hover{
-    box-shadow: 1px 1px #0003;
-}
-
-.completed:hover{
-    box-shadow: none;
+    box-shadow: 1px 1px #0006;
 }
 
 .message{
-    padding-left: 7em;
+    padding-left: 8em;
     text-align: center;
     display:inline-block;
 }
 
 .title{
-    box-shadow: 0px 1px #0003;
+    box-shadow: 0px 1px #0006;
 }
 
 #input{
@@ -94,9 +95,12 @@ body{
     bottom: 0;
     background: #434d4e;
     width: 100%;
-    box-shadow: 2px -3px #0003;
+    box-shadow: 2px -3px #0006;
 }
 
 #input #message{
     width: 80%;
+    background: #ddd;
+    resize: none;
+ 
 }
