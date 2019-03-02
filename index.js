@@ -7,6 +7,8 @@ var closedRequests = [];
 var requestsDiv = d3.select("#requests").text("");
 var closedRequestsDiv = d3.select("#closed").text("");
 
+var checkBox = document.getElementById("urgentCheck");
+
 function addRequest(picture, displayName, title, description){
 	var request = {
 		picture: picture,
@@ -47,7 +49,8 @@ function addRequest(picture, displayName, title, description){
 	message.append("textarea")
 		.attr("readonly","true")
 		.attr("class", "title")
-		.text(request.title);
+		.text(request.title)
+		.classed("title-urgent", checkBox.checked == true);
 
 	message.append("textarea")
 		.attr("readonly","true")

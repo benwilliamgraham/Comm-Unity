@@ -107,6 +107,20 @@ body{
     border: none;
 }
 
+.title-urgent{
+    text-align: left;
+    padding-left: .6em;
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 80%;
+    background: #eee;
+    color: #720000;
+    resize: none;
+    height: 1.2em;
+    border-radius: 0em 0em 1em 0em;
+    border: none;
+}
+
 .description{
     padding-left: 1em;
     padding-top:0em;
@@ -161,6 +175,18 @@ body{
     border-radius: 1em;
     background: #eee;
     box-shadow: 2px 3px #0006;
+    border: none;
+    transition: 0.3s;
+}
+
+#urgentCheck{
+    position: absolute;
+    top: 7.5em;
+    right: 8.25em;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 1em;
+    background: #eee;
     border: none;
     transition: 0.3s;
 }

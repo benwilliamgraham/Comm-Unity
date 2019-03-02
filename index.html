@@ -13,7 +13,9 @@
 </head>
 
 <body>
-    <center><h2>Requests within your community</h2></center>
+    <center>
+        <h2>Requests within your community</h2>
+    </center>
     <div id="container">
         <div id="login-button"></div>
         <div id="profile" class="hidden">
@@ -41,7 +43,11 @@
             Description:<br>
             <textarea maxlength="256" id="description"></textarea><br>
         </div>
-        <button id="post">Post<br>Request</button>
+        <div>
+            <button id="post">Post<br>Request</button>
+            <input type="checkbox" id="urgentCheck" name="urgent" onclick="toggleUrgent()">
+            <label for="urgent">Urgent</label>
+        </div>
         <script src="index.js"></script>
     </div>
 
@@ -76,4 +82,5 @@
         }(document, "script", "loginkit-sdk"));
     </script>
 </body>
+
 </html>
