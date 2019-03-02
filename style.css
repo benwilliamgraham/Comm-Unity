@@ -43,6 +43,10 @@ body{
     margin: auto;
 }
 
+.hidden {
+    display: none;
+  }
+
 .completed{
     position: absolute;
     top: 1.2em;
