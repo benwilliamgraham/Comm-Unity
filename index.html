@@ -18,6 +18,16 @@
             <p id="displayName">Guest</p>
         </div>
     </div>
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Closed')">Closed Requests</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Closed" class="tabcontent">
+        <p></p>
+        <span onclick="this.parentElement.style.display='none'">Close</span>
+    </div>
+
     <div id="requests"></div>
     <div id="input">
         <div id="text">
