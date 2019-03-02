@@ -99,7 +99,7 @@ $(document).ready(function(){
 
 	//add send button
 	$('#post').click(function(){
-		const message = "add##" + $("#picture").html() + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
+		const message = "add##" + $("#picture").attr('src') + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
 
 		//clear message box
 		$("#title").val("");
