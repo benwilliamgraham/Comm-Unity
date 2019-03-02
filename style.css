@@ -147,10 +147,12 @@ body{
 #input #message{
     width: 80%;
 }
-#login-button button {
+
+#login-button button{
     cursor: pointer;
     font-family: Helvetica, Arial, sans-serif;
-  }
+}
+
 #text{
     width: 85%;
     display: inline-block;
@@ -189,6 +191,7 @@ body{
 }
 
 .tab {
+    margin-top: 1.5em;
     overflow: hidden;
     background-color: #f1f1f1;
     box-shadow: 2px 3px #0006;
