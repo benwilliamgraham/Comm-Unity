@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/benwilliamgraham/Ben-Jess-and-Sabrina-s-Super-Duper-App#readme",
   "dependencies": {
+    "@pusher/chatkit-server": "^1.0.4",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "http-server": "^0.11.1",
     "pusher": "^2.2.0"
   },
   "devDependencies": {
