@@ -75,7 +75,7 @@ $(document).ready(function(){
 	channel.bind("update", onUpdate);
 
 	//add send button
-	$('#send').click(function(){
+	$('#post').click(function(){
 		const message = "add##" + $("#title").val() + "##" + $("#description").val();
 
 		//clear message box

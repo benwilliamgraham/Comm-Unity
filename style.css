@@ -117,6 +117,15 @@ body{
     resize: none;
 }
 
-#send{
-
+#post{
+    position: absolute;
+    top: 1.2em;
+    right: 4em;
+    width: 4em;
+    height: 4em;
+    border-radius: 1em;
+    background: #ddd;
+    box-shadow: 2px 3px #0006;
+    border: none;
+    transition: 0.3s;
 }
