@@ -10,7 +10,7 @@ var closedRequestsDiv = d3.select("#closed").text("");
 
 var checkBox = document.getElementById("urgentCheck");
 
-function addRequest(picture, displayName, title, description){
+function addRequest(picture, displayName, title, description, urgent){
 	var request = {
 		picture: picture,
 		displayName: displayName,
@@ -51,7 +51,7 @@ function addRequest(picture, displayName, title, description){
 		.attr("readonly","true")
 		.attr("class", "title")
 		.text(request.title)
-		.classed("title-urgent", checkBox.checked == true);
+		.classed("title-urgent", urgent != "false");
 
 	message.append("textarea")
 		.attr("readonly","true")
@@ -101,7 +101,7 @@ function addClosedRequest(closer, picture, displayName, title, description){
 	message.append("textarea")
 		.attr("readonly","true")
 		.attr("class", "title")
-		.text(request.title + " - Closed By " + closer);
+		.text(request.title + " - Closed by " + closer);
 
 	message.append("textarea")
 		.attr("readonly","true")
@@ -168,7 +168,7 @@ $(document).ready(function(){
 
 	//add send button
 	$('#post').click(function(){
-		const message = "add##" + $("#picture").attr('src') + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
+		const message = "add##" + $("#picture").attr('src') + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val() + "##" + checkBox.checked;
 
 		//clear message box
 		$("#title").val("");
@@ -182,7 +182,7 @@ $(document).ready(function(){
 	function onUpdate(data) {
 		var update = data.message.split("##");
 		if (update[0] == "add"){
-			addRequest(update[1], update[2], update[3], update[4]);
+			addRequest(update[1], update[2], update[3], update[4], update[5]);
 		}
 		else if(update[0] == "close"){
 			closeRequest(update[1], update[2], update[3]);
