@@ -1,8 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var Pusher = require("pusher");
-const cors = require('cors');
-
 const Chatkit = require('@pusher/chatkit-server');
 
 var app = express();
@@ -22,7 +20,7 @@ const chatkit = new Chatkit.default({
 	})
   );
   app.use(bodyParser.json());
-  app.use(cors());
+  //app.use(cors());
   
   app.post('/users', (req, res) => {
 	const { username } = req.body;
