@@ -99,6 +99,13 @@ body{
     box-shadow: 2px -3px #0006;
 }
 
+#input #message{
+    width: 80%;
+}
+#login-button button {
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+  }
 #text{
     width: 85%;
     display: inline-block;
