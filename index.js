@@ -5,11 +5,6 @@ var requests = [];
 
 var requestsDiv = d3.select("#requests").text("");
 
-const chatkit = new Chatkit.default({
-	instanceLocator: 'v1:us1:89d3c02a-7a0c-46df-935f-e5e98a5f69e6',
-	key: '5dfb3a8b-de47-4916-b7db-68649cfd4539:xxHdfamprG/SfAYC43fCcFUTuPPLHrU1F0vztbmZ3yQ=',
-  });
-
 function addRequest(request){
 	request = {
 		value: request
