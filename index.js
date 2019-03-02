@@ -5,7 +5,7 @@ var requests = [];
 
 var requestsDiv = d3.select("#requests").text("");
 
-function addRequest(displayName, title, description){
+function addRequest(picture, displayName, title, description){
 	var request = {
 		title: title,
 		description: description
@@ -31,7 +31,7 @@ function addRequest(displayName, title, description){
 
 	userInfo.append("img")
 		.attr("class", "bitmoji")
-		.attr("src", "temp.png");
+		.attr("src", picture);
 
 	userInfo.append("div")
 		.attr("class", "snapId")
@@ -78,7 +78,7 @@ $(document).ready(function(){
 
 	//add send button
 	$('#post').click(function(){
-		const message = "add##" + $("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
+		const message = "add##" + $("#picture").html() + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
 
 		//clear message box
 		$("#title").val("");
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	function onUpdate(data) {
 		var update = data.message.split("##");
 		if (update[0] == "add"){
-			addRequest(update[1], update[2], update[3]);
+			addRequest(update[1], update[2], update[3], update[4]);
 		}
 		else{
 			removeRequest(update[1], update[2]);
