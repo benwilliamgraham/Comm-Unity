@@ -28,7 +28,7 @@ function addRequest(picture, displayName, title, description, urgent){
 		.attr("type", "button")
 		.attr("value", "✔️")
 		.on("click", function(){
-			const message = "close##" + request.title + "##" + request.description + "##" + displayName;
+			const message = "close##" + request.title + "##" + request.description + "##" + $("#displayName").html();
 
 			$.post( "http://localhost:8000/message", { message } );
 		});
@@ -168,7 +168,7 @@ $(document).ready(function(){
 
 	//add send button
 	$('#post').click(function(){
-		const message = "add##" + $("#picture").attr('src') + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val() + "##" + checkBox.checked;
+		const message = "add##" + $("#picture").attr('src') + "##" + $("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val() + "##" + checkBox.checked;
 
 		//clear message box
 		$("#title").val("");
