@@ -3,6 +3,7 @@
 //setup page globals
 var requests = [];
 var closedRequests = [];
+var isClosed = true;
 
 var requestsDiv = d3.select("#requests").text("");
 var closedRequestsDiv = d3.select("#closed").text("");
