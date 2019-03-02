@@ -18,25 +18,24 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #f3e99a;
+    background-color: #cfd9db;
 }
 
 #requests{
-    height: 75%;
-    background: #d8ce82;
+
 }
 
 .request{
     background: #eee;
     border-radius: 1em;
-    box-shadow: 2px 3px #0003;
+    box-shadow: 2px 3px #0006;
     margin: 1em;
     transition: 0.3s;
     height: 4em;
 }
 
 .check{
-    width: 3.5em;
+    width: 4em;
     height: 4em;
     position: absolute;
     background: #434d4e;
@@ -51,15 +50,22 @@ body{
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
-    background-color: #fcfcfc;
+    background: #ddd;
+    box-shadow: 2px 3px #0006;
     border: none;
+    transition: 0.3s;
+}
+
+.completed:hover{
+    box-shadow: none;
+    background: #ccc;
 }
 
 .userInfo{
     position: absolute;
     width: 4em;
     height: 4em;
-    left: 3.5em;
+    left: 4em;
     padding: 0em;
     background: #434d4e;
     text-align: center;
@@ -70,29 +76,27 @@ body{
 }
 
 .request:hover{
-    box-shadow: 1px 1px #0003;
-}
-
-.completed:hover{
-    background-color: #dedede;
+    box-shadow: 1px 1px #0006;
 }
 
 .message{
-    padding-left: 7em;
+    padding-left: 8em;
     text-align: center;
     display:inline-block;
 }
 
 .title{
-    box-shadow: 0px 1px #0003;
+    box-shadow: 0px 1px #0006;
 }
 
 #input{
     position: absolute;
+    padding: 1em;
     bottom: 0;
-    background: #d8ce82;
+    color: #ddd;
+    background: #434d4e;
     width: 100%;
-    border-top: 2px solid #918b61;
+    box-shadow: 2px -3px #0006;
 }
 
 #input #message{
@@ -102,3 +106,24 @@ body{
     cursor: pointer;
     font-family: Helvetica, Arial, sans-serif;
   }
+#text{
+    width: 85%;
+    display: inline-block;
+}
+
+#title{
+    width: 100%;
+    background: #ddd;
+    resize: none;
+    height: 1.2em;
+}
+
+#description{
+    width: 100%;
+    background: #ddd;
+    resize: none;
+}
+
+#send{
+
+}
