@@ -31,8 +31,6 @@ function addRequest(request){
 		.attr("class", "message")
 		.text(request.value);
 
-	requestsDiv.append("br");
-
 	requests.push(request);
 }
 
