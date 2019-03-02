@@ -1,5 +1,5 @@
 body{
-    font-family: "consolas", mono;
+    font-family: "Calibri", mono;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -19,10 +19,6 @@ body{
     -ms-user-select: none;
     user-select: none;
     background-color: #cfd9db;
-}
-
-#requests{
-
 }
 
 .request{
@@ -76,6 +72,7 @@ body{
 }
 
 .bitmoji{
+    padding-top:.4em;
     width:2em;
 }
 
@@ -91,9 +88,12 @@ body{
 }
 
 .title{
-    text-align: center;
+    text-align: left;
+    padding-left: .6em;
+    font-size: 1.5em;
+    font-weight: bold;
     width: 80%;
-    background: #ccc;
+    background: #eee;
     color: #434d4e;
     resize: none;
     height: 1.2em;
