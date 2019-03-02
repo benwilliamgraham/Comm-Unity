@@ -1,4 +1,5 @@
 body{
+    font-family: "consolas", mono;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -26,17 +27,26 @@ body{
 
 .request{
     background: #eee;
-    border-radius: 10px;
-    padding: 1em;
+    border-radius: 1em;
     box-shadow: 2px 3px #0003;
+    margin: 1em;
     transition: 0.3s;
+    height: 4em;
 }
 
-.request:hover{
-    box-shadow: 1px 1px #0003;
+.check{
+    width: 3.5em;
+    height: 4em;
+    position: absolute;
+    background: #434d4e;
+    border-radius: 1em 0em 0em 1em;
+    margin: auto;
 }
 
 .completed{
+    position: absolute;
+    top: 1.2em;
+    left: 0.5em;
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
@@ -46,13 +56,36 @@ body{
     transition: 0.3s;
 }
 
+.userInfo{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    left: 3.5em;
+    padding: 0em;
+    background: #434d4e;
+    text-align: center;
+}
+
+.bitmoji{
+    width:2em;
+}
+
+.request:hover{
+    box-shadow: 1px 1px #0003;
+}
+
 .completed:hover{
     box-shadow: none;
 }
 
 .message{
-    padding-left: 2em;
+    padding-left: 7em;
+    text-align: center;
     display:inline-block;
+}
+
+.title{
+    box-shadow: 0px 1px #0003;
 }
 
 #input{

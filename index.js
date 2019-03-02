@@ -13,7 +13,9 @@ function addRequest(request){
 	request.requestDiv = requestsDiv.append("div")
 		.attr("class", "request");
 
-	request.requestDiv.append("input")
+	request.requestDiv.append("div")
+		.attr("class", "check")
+		.append("input")
 		.attr("class", "completed")
 		.attr("type", "button")
 		.attr("value", "✔️")
@@ -22,11 +24,28 @@ function addRequest(request){
 
 			$.post( "http://localhost:8000/message", { message } );
 		});
-	request.requestDiv.append("div")
-		.attr("class", "message")
-		.text(request.value);
 
-	requestsDiv.append("br");
+	var userInfo = request.requestDiv.append("div")
+		.attr("class", "userInfo");
+
+	userInfo.append("img")
+		.attr("class", "bitmoji")
+		.attr("src", "temp.png");
+
+	userInfo.append("div")
+		.attr("class", "snapId")
+		.text("snapId");
+
+	var message = request.requestDiv.append("div")
+		.attr("class", "message");
+
+	message.append("div")
+		.attr("class", "title")
+		.text("Title");
+
+	message.append("div")
+		.attr("class", "details")
+		.text(request.value);
 
 	requests.push(request);
 }
