@@ -1,5 +1,5 @@
 body{
-    font-family: "consolas", mono;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -72,6 +72,7 @@ body{
 }
 
 .bitmoji{
+    padding-top:.4em;
     width:2em;
 }
 
@@ -87,9 +88,12 @@ body{
 }
 
 .title{
-    text-align: center;
+    text-align: left;
+    padding-left: .6em;
+    font-size: 1.5em;
+    font-weight: bold;
     width: 80%;
-    background: #ccc;
+    background: #eee;
     color: #434d4e;
     resize: none;
     height: 1.2em;
@@ -144,10 +148,10 @@ body{
 
 #post{
     position: absolute;
-    top: 1.2em;
-    right: 4em;
-    width: 4em;
-    height: 4em;
+    top: 3.5em;
+    right: 5em;
+    width: 5em;
+    height: 3.5em;
     border-radius: 1em;
     background: #eee;
     box-shadow: 2px 3px #0006;
@@ -158,4 +162,36 @@ body{
 #post:hover{
     background: #ccc;
     box-shadow: 1px 1px #0006;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
 }

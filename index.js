@@ -5,7 +5,7 @@ var requests = [];
 
 var requestsDiv = d3.select("#requests").text("");
 
-function addRequest(displayName, title, description){
+function addRequest(picture, displayName, title, description){
 	var request = {
 		title: title,
 		description: description
@@ -31,7 +31,7 @@ function addRequest(displayName, title, description){
 
 	userInfo.append("img")
 		.attr("class", "bitmoji")
-		.attr("src", "temp.png");
+		.attr("src", picture);
 
 	userInfo.append("div")
 		.attr("class", "snapId")
@@ -63,6 +63,27 @@ function removeRequest(title, description){
 	}
 }
 
+function openTab(evt, tabName) {
+	// Declare all variables
+	var i, tabcontent, tablinks;
+  
+	// Get all elements with class="tabcontent" and hide them
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+	  tabcontent[i].style.display = "none";
+	}
+  
+	// Get all elements with class="tablinks" and remove the class "active"
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+	  tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+  
+	// Show the current tab, and add an "active" class to the button that opened the tab
+	document.getElementById(tabName).style.display = "block";
+	evt.currentTarget.className += " active";
+  }
+
 //action page
 $(document).ready(function(){
 	//connect to the node server
@@ -78,7 +99,7 @@ $(document).ready(function(){
 
 	//add send button
 	$('#post').click(function(){
-		const message = "add##" + $("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
+		const message = "add##" + $("#picture").attr('src') + "##" +$("#displayName").html() + "##" + $("#title").val() + "##" + $("#description").val();
 
 		//clear message box
 		$("#title").val("");
@@ -92,7 +113,7 @@ $(document).ready(function(){
 	function onUpdate(data) {
 		var update = data.message.split("##");
 		if (update[0] == "add"){
-			addRequest(update[1], update[2], update[3]);
+			addRequest(update[1], update[2], update[3], update[4]);
 		}
 		else{
 			removeRequest(update[1], update[2]);
