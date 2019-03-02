@@ -18,11 +18,12 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #cfd9db;
+    background-color: #f3e99a;
 }
 
 #requests{
-
+    height: 75%;
+    background: #d8ce82;
 }
 
 .request{
@@ -50,10 +51,8 @@ body{
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
-    background-color: #dfdfdf;
-    box-shadow: 2px 3px #0003;
+    background-color: #fcfcfc;
     border: none;
-    transition: 0.3s;
 }
 
 .userInfo{
@@ -75,7 +74,7 @@ body{
 }
 
 .completed:hover{
-    box-shadow: none;
+    background-color: #dedede;
 }
 
 .message{
@@ -90,11 +89,10 @@ body{
 
 #input{
     position: absolute;
-    padding: 1em;
     bottom: 0;
-    background: #434d4e;
+    background: #d8ce82;
     width: 100%;
-    box-shadow: 2px -3px #0003;
+    border-top: 2px solid #918b61;
 }
 
 #input #message{
