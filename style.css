@@ -50,7 +50,7 @@ body{
     width: 2.5em;
     height: 2.5em;
     border-radius: 2.5em;
-    background: #ddd;
+    background: #eee;
     box-shadow: 2px 3px #0006;
     border: none;
     transition: 0.3s;
@@ -80,20 +80,38 @@ body{
 }
 
 .message{
-    padding-left: 8em;
-    text-align: center;
+    padding-left: 7em;
+    text-align: left;
     display:inline-block;
+    width:80%;
 }
 
 .title{
-    box-shadow: 0px 1px #0006;
+    text-align: center;
+    width: 80%;
+    background: #ccc;
+    color: #434d4e;
+    resize: none;
+    height: 1.2em;
+    border-radius: 0em 0em 1em 0em;
+    border: none;
+}
+
+.description{
+    padding-left: 1em;
+    padding-top:0em;
+    width: 100%;
+    background: #eee;
+    resize: none;
+    height: 2.2em;
+    border: none;
 }
 
 #input{
     position: absolute;
     padding: 1em;
     bottom: 0;
-    color: #ddd;
+    color: #eee;
     background: #434d4e;
     width: 100%;
     box-shadow: 2px -3px #0006;
@@ -113,14 +131,14 @@ body{
 
 #title{
     width: 100%;
-    background: #ddd;
+    background: #eee;
     resize: none;
     height: 1.2em;
 }
 
 #description{
     width: 100%;
-    background: #ddd;
+    background: #eee;
     resize: none;
 }
 
@@ -131,8 +149,13 @@ body{
     width: 4em;
     height: 4em;
     border-radius: 1em;
-    background: #ddd;
+    background: #eee;
     box-shadow: 2px 3px #0006;
     border: none;
     transition: 0.3s;
+}
+
+#post:hover{
+    background: #ccc;
+    box-shadow: 1px 1px #0006;
 }

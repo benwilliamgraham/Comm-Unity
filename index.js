@@ -41,11 +41,13 @@ function addRequest(title, description){
 		.attr("class", "message");
 
 	message.append("textarea")
+		.attr("readonly","true")
 		.attr("class", "title")
 		.text(request.title);
 
 	message.append("textarea")
-		.attr("class", "details")
+		.attr("readonly","true")
+		.attr("class", "description")
 		.text(request.description);
 
 	requests.push(request);
