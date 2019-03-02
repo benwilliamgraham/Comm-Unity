@@ -2,11 +2,15 @@
 
 //setup page globals
 var requests = [];
+var closedRequests = [];
 
 var requestsDiv = d3.select("#requests").text("");
+var closedRequestsDiv = d3.select("#closed").text("");
 
 function addRequest(picture, displayName, title, description){
 	var request = {
+		picture: picture,
+		displayName: displayName,
 		title: title,
 		description: description
 	};
@@ -21,7 +25,7 @@ function addRequest(picture, displayName, title, description){
 		.attr("type", "button")
 		.attr("value", "✔️")
 		.on("click", function(){
-			const message = "del##" + request.title + "##" + request.description;
+			const message = "close##" + request.title + "##" + request.description + "##" + displayName;
 
 			$.post( "http://localhost:8000/message", { message } );
 		});
@@ -53,11 +57,72 @@ function addRequest(picture, displayName, title, description){
 	requests.push(request);
 }
 
-function removeRequest(title, description){
+function addClosedRequest(closer, picture, displayName, title, description){
+	var request = {
+		picture: picture,
+		displayName: displayName,
+		title: title,
+		description: description,
+	};
+
+	request.requestDiv = closedRequestsDiv.append("div")
+		.attr("class", "request");
+
+	request.requestDiv.append("div")
+		.attr("class", "check")
+		.append("input")
+		.attr("class", "completed")
+		.attr("type", "button")
+		.attr("value", "🗑️")
+		.on("click", function(){
+			const message = "del##" + request.title + "##" + request.description;
+
+			$.post( "http://localhost:8000/message", { message } );
+		});
+
+	var userInfo = request.requestDiv.append("div")
+		.attr("class", "userInfo");
+
+	userInfo.append("img")
+		.attr("class", "bitmoji")
+		.attr("src", picture);
+
+	userInfo.append("div")
+		.attr("class", "snapId")
+		.text(displayName);
+
+	var message = request.requestDiv.append("div")
+		.attr("class", "message");
+
+	message.append("textarea")
+		.attr("readonly","true")
+		.attr("class", "title")
+		.text(request.title + " - Closed By " + closer);
+
+	message.append("textarea")
+		.attr("readonly","true")
+		.attr("class", "description")
+		.text(request.description);
+
+	closedRequests.push(request);
+}
+
+function closeRequest(title, description, closer){
 	for(var r = 0; r < requests.length; r++){
 		if(requests[r].title == title && requests[r].description == description){
+			addClosedRequest(closer, requests[r].picture, requests[r].displayName, requests[r].title, requests[r].description);
 			requests[r].requestDiv.remove();
 			requests.splice(r, 1);
+			return;
+		}
+	}
+}
+
+function removeRequest(title, description){
+	for(var r = 0; r < closedRequests.length; r++){
+		if(closedRequests[r].title == title && closedRequests[r].description == description){
+			closedRequests[r].requestDiv.remove();
+			closedRequests.splice(r, 1);
 			return;
 		}
 	}
@@ -114,6 +179,9 @@ $(document).ready(function(){
 		var update = data.message.split("##");
 		if (update[0] == "add"){
 			addRequest(update[1], update[2], update[3], update[4]);
+		}
+		else if(update[0] == "close"){
+			closeRequest(update[1], update[2], update[3]);
 		}
 		else{
 			removeRequest(update[1], update[2]);

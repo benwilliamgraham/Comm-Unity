@@ -21,6 +21,11 @@ body{
     background-color: #cfd9db;
 }
 
+#closed{
+    margin: 0px;
+    padding: 0px;
+}
+
 .request{
     background: #eee;
     border-radius: 1em;
